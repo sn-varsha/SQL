@@ -50,3 +50,21 @@ select * from student order by city asc;
 select * from student order by marks asc;
 
 select * from student order by marks desc limit 3;
+
+use college2;
+select max(marks) from student;
+select avg(marks) from student;
+select count(marks) from student;
+
+select city, count(rollno) from student group by city;
+select city, avg(marks) from student group by city order by city;
+
+select grade, count(rollno) from student group by grade order by grade;
+select count(rollno), city from student group by city having max(marks)>90;
+
+select city
+from student 
+where grade = "a"
+group by city
+having max(marks) > 90
+order by city desc;
