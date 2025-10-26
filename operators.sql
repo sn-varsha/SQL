@@ -68,3 +68,15 @@ where grade = "a"
 group by city
 having max(marks) > 90
 order by city desc;
+
+set sql_safe_updates=0;
+update student set grade="o" where grade="a";
+select * from student;
+update student set marks=82 where rollno=105;
+update student set grade="b" where marks between 80 and 90;
+select * from student;
+update student set marks=marks+1;
+select * from student;
+update student set marks=12 where rollno=105;
+delete from student where marks<33;
+select * from student;
