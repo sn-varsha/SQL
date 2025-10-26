@@ -96,3 +96,6 @@ insert into student (rollno, name, marks, stu_age) values (107, "gargi", 68, 100
 alter table student drop column stu_age;
 select * from student;
 alter table student rename to stu;
+
+alter table stu rename to student;
+truncate table student;
