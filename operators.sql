@@ -103,4 +103,39 @@ truncate table student;
 alter table student change name full_name varchar(50);
 delete from student where marks<80;
 alter table student drop column grade;
+alter table student add column grade varchar(20);
+alter table student change full_name name varchar(50);
 select * from student;
+
+select avg(marks) from student;
+
+select name, marks
+from student
+where marks > 74.3333;
+
+#sub-query using where
+select name, marks
+from student
+where marks > (select avg(marks) from student);
+
+select rollno
+from student
+where rollno % 2 = 0;
+
+select name, rollno
+from student 
+where rollno in (102, 104, 106);
+
+select name, rollno
+from student 
+where rollno in (
+    select rollno
+    from student
+	where rollno % 2 = 0);
+    
+#sub-query using from
+select max(marks)
+from(select * from student where city="Delhi") as temp;
+
+#sub-qurey using select
+select (select max(marks) from student), name from student; 
