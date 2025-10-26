@@ -99,3 +99,8 @@ alter table student rename to stu;
 
 alter table stu rename to student;
 truncate table student;
+
+alter table student change name full_name varchar(50);
+delete from student where marks<80;
+alter table student drop column grade;
+select * from student;
