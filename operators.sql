@@ -80,3 +80,19 @@ select * from student;
 update student set marks=12 where rollno=105;
 delete from student where marks<33;
 select * from student;
+
+alter table student 
+add column age int;
+
+alter table student 
+drop column age;
+
+alter table student 
+add column age int not null default 19;
+
+alter table student modify column age varchar(2);
+alter table student change age stu_age int;
+insert into student (rollno, name, marks, stu_age) values (107, "gargi", 68, 100);
+alter table student drop column stu_age;
+select * from student;
+alter table student rename to stu;
