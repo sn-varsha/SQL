@@ -139,3 +139,12 @@ from(select * from student where city="Delhi") as temp;
 
 #sub-qurey using select
 select (select max(marks) from student), name from student; 
+
+create view view1 as
+select rollno, name, marks from student;
+
+select * from view1;
+select * from view1 where marks>90;
+
+drop view view1;
+select * from view1;
